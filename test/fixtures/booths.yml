@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  booth_number: MyString
+  color_id: 1
+  available: false
+
+two:
+  booth_number: MyString
+  color_id: 1
+  available: false

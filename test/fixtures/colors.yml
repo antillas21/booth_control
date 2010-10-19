@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  hex_value: MyString
+
+two:
+  name: MyString
+  hex_value: MyString
