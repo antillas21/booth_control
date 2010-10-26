@@ -2,7 +2,7 @@
 body { background: #665874 url('/images/body.png'); line-height: 150%; }
 td { vertical-align: middle; padding: 5px;}
 tr.odd { background: #fff;}
-form input[type=text] { height: 24px; font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; }
+form input[type=text], form input[type=password] { height: 24px; font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; }
 form p { margin-bottom: 15px; }
 form li { margin: 0; list-style: none;}
 form ol, form ul { list-style: none;}
