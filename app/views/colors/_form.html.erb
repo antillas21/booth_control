@@ -1,0 +1,11 @@
+<% form_for @color do |f| %>
+	<p>
+		<%= f.label "Nombre" %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label "Valor Hexadecimal" %><br />
+		<%= f.text_field :hex_value %>
+	</p>
+	<p><%= f.submit "Listo", :class => 'as_button' %></p>
+<% end %>

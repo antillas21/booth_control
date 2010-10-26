@@ -1,0 +1,36 @@
+<table class="datatable">
+	<thead>
+		<tr>
+			<th>Booths</th>
+			<th>Disponibilidad</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @booths.each do |booth| %>
+		<tr>
+			<td class="twothirds">
+				<div class="sample" style="background: #<%= booth.color.hex_value %>">
+					<span>&nbsp;</span>
+				</div>
+				<%= booth.booth_number %>
+				<div class="hovercontrols">
+					<ul id="controls">
+					<li><%= link_to "<span class=\"ui-icon ui-icon-pencil ui-state-active\">icon</span>".html_safe, edit_booth_path(booth) %></li>
+					<li><%= link_to "<span class=\"ui-icon ui-icon-trash ui-state-active\">icon</span>".html_safe, booth, :confirm => "Esta seguro que desea borrar este booth?", :method => :delete %></li>
+					</ul>
+				</div>
+			</td>
+			<td class="onethird">
+				<div class="moredata">
+					<% if booth.available == true %>
+						<span class="ui-icon ui-icon-check ui-state-active ui-corner-all" style="margin-left: 10px;"><%= booth.available %></span>
+					<% else %>
+						<span class="ui-icon ui-icon-closethick ui-state-default ui-corner-all" style="margin-left: 10px;"><%= booth.available %></span>
+					<% end %>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<p><%= link_to "Nuevo Booth", new_booth_path, :class => 'as_button' %></p>

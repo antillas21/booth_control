@@ -14,6 +14,9 @@ BoothControl::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :colors
+  resources :exhibitor_types
+  resources :booths
 
   # Sample resource route with options:
   #   resources :products do

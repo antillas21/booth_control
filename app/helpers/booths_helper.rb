@@ -1,0 +1,2 @@
+module BoothsHelper
+end

@@ -2,15 +2,34 @@
 <html>
 <head>
   <title>BoothControl</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag '960', 'text', 'reset', 'jquery-ui-1.8.5.eggplant' %>
+  <%= stylesheet_link_tag 'demo_page', 'demo_table', 'demo_table_jui', 'application', 'uniform.aristo' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
- 	<p class="alert"><%= alert %></p>
-
-<%= yield %>
-
+	<div id="wrapper" class="container_16">
+		<div id="page" class="grid_16">
+			<div id="header">
+				<%= render :partial => 'layouts/header' %>
+			</div>
+			<div id="content">
+				<% if notice %>
+				<div class="ui-widget notice">
+					<div class="ui-state-highlight ui-corner-all">
+						<span style="float: left; margin-right: 0.3em; margin-top: 0.45em" class="ui-icon ui-icon-info">icon</span>
+						<%= notice %>
+					</div>
+				</div>
+				<% end %>
+			 	<p class="alert"><%= alert %></p>
+				<%= yield %>
+			</div>
+			<div id="footer">
+				<%= javascript_include_tag 'jquery', 'rails' %>
+				<%= javascript_include_tag 'jquery-ui', 'jquery.dataTables', 'jquery.uniform.min', 'application' %>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
 </body>
 </html>

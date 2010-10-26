@@ -1,0 +1,7 @@
+<% form_for @exhibitor_type do |f| %>
+	<p>
+		<%= f.label "Nombre" %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p><%= f.submit "Listo", :class => 'as_button' %></p>
+<% end %>

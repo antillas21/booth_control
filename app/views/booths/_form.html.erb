@@ -1,0 +1,20 @@
+<% semantic_form_for @booth do |f| %>
+	<p>
+		<%= f.label "Codigo" %><br />
+		<%= f.text_field :code %>
+	</p>
+	<p>
+		<%= f.label "Numero de Booth" %><br />
+		<%= f.text_field :booth_number %>
+	</p>
+	<p>
+		<%= f.label "Color" %><br />
+		<%= f.input :color, :as => :select, :label => false  %>
+	</p>
+	<p>
+		<%= f.label "Disponible?" %><br />
+		<%= f.input :available, :as => :radio, :label => false %>
+	</p>
+	
+	<p><%= f.submit "Listo", :class => 'as_button' %></p>
+<% end %>
