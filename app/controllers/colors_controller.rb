@@ -1,6 +1,7 @@
 class ColorsController < ApplicationController
   
   before_filter :find_color, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
   
   def index
     @colors = Color.order("name asc")

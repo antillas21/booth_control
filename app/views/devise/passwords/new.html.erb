@@ -1,0 +1,12 @@
+<h2>&iquest;Olvidaste tu password?</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.submit "Enviar instrucciones", :class => 'as_button' %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

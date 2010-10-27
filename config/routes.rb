@@ -1,5 +1,5 @@
 BoothControl::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -17,6 +17,7 @@ BoothControl::Application.routes.draw do
   resources :colors
   resources :exhibitor_types
   resources :booths
+  resources :companies
 
   # Sample resource route with options:
   #   resources :products do

@@ -1,10 +1,10 @@
 <div id="navigation">
 	<% if user_signed_in? %>
 		<div>
-			Loggeado como <%= current_user.email %>. &iquest;No eres t&uacute;? <%= link_to "Salir", destroy_user_session_path %>
+			Loggeado como <%= current_user.name %>. &iquest;No eres t&uacute;? <%= link_to "Salir", destroy_user_session_path %>
 			<div id="menu">
 				<ul>
-					<li>Agregar Expositor</li>
+					<li><%= link_to "Expositores", companies_path %></li>
 					<li><%= link_to "Colores", colors_path %></li>
 					<li><%= link_to "Tipos de Expositor", exhibitor_types_path %></li>
 					<li><%= link_to "Booths", booths_path %></li>

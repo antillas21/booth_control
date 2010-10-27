@@ -21,7 +21,14 @@
 					</div>
 				</div>
 				<% end %>
-			 	<p class="alert"><%= alert %></p>
+				<% if alert %>
+				<div class="ui-widget alert">
+					<div class="ui-state-error ui-corner-all">
+						<span style="float: left; margin-right: 0.3em; margin-top: 0.45em" class="ui-icon ui-icon-info">icon</span>
+						<%= alert %>
+					</div>
+				</div>
+				<% end %>
 				<%= yield %>
 			</div>
 			<div id="footer">

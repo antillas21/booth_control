@@ -1,6 +1,7 @@
 class BoothsController < ApplicationController
   
   before_filter :find_booth, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
   
   def index
     @booths = Booth.order("booth_number asc")

@@ -1,6 +1,7 @@
 class ExhibitorTypesController < ApplicationController
   
   before_filter :find_exhibitor_type, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
   
   def index
     @exhibitor_types = ExhibitorType.order("name asc")

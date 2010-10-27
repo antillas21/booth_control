@@ -1,0 +1,21 @@
+<h2>Expositores</h2>
+
+<table class="datatable">
+	<thead>
+		<tr>
+			<th>Agente</th>
+			<th>Expositor</th>
+			<th>Tipo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @companies.each do |company| %>
+			<tr>
+				<td class="equalthird"><%= company.user.name %></td>
+				<td class="mainthird"><%= link_to company.name, company %></td>
+				<td class="equalthird"><%= company.exhibitor_type.name %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<p><%= link_to "Nuevo Expositor", new_company_path, :class => 'as_button' %></p>
