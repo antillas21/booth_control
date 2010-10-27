@@ -4,7 +4,7 @@ class BoothsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @booths = Booth.order("booth_number asc")
+    @booths = Booth.all
   end
   
   def show

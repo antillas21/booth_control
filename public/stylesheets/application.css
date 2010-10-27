@@ -18,7 +18,7 @@ ul#controls li { float: left; margin-right: 10px;}
 #company-info { margin-bottom: 20px;}
 
 /* CLASSES */
-.sample { width: 30px; height: 30px; float: left; margin-right: 15px; border: 1px solid #333; }
+.sample { width: 25px; height: 25px; float: left; margin-right: 15px; border: 1px solid #333; }
 .ui-widget { font-size: 0.75em;}
 .dataTables_wrapper .ui-widget-header { font-weight: normal; font-size: 0.8em;}
 .onecolumn-only { width: 940px;}

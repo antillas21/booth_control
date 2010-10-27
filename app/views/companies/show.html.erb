@@ -9,5 +9,17 @@
 </div>
 <div class="grid_6 omega">
 	<h2>Booths asignados</h2>
+	<ul>
+		<% @company.reservations.each do |reservation| %>
+			<li>
+				<div class="sample" style="background: #<%= reservation.booth.color_hex_value %>">
+					<span>&nbsp;</span>
+				</div>
+				<%= reservation.booth.booth_number %>
+				<%= link_to "borrar", company_reservation_path(@company, reservation), :confirm => "Esta seguro que desea borrar esta Reservacion?", :method => :delete %>
+			</li>
+		<% end %>
+	</ul>
+	<p><%= link_to "Agregar booth", new_company_reservation_path(@company), :class => 'as_button' %></p>
 </div>
 <div class="clear"></div>

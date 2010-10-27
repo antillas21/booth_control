@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101026223142) do
+ActiveRecord::Schema.define(:version => 20101027162654) do
 
   create_table "booths", :force => true do |t|
     t.string   "booth_number"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20101026223142) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reservations", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "booth_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservations", ["booth_id"], :name => "index_reservations_on_booth_id"
+  add_index "reservations", ["company_id"], :name => "index_reservations_on_company_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

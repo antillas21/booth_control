@@ -4,6 +4,11 @@ class Booth < ActiveRecord::Base
   validates_uniqueness_of :code, :booth_number
   
   belongs_to :color
+  delegate :hex_value, :to => :color, :prefix => true
+  
+  has_one :reservation
+  
+  scope :free, where(:available => true)
   
   def color_name
     color.name if color

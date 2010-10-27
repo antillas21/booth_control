@@ -17,7 +17,10 @@ BoothControl::Application.routes.draw do
   resources :colors
   resources :exhibitor_types
   resources :booths
-  resources :companies
+  resources :companies do
+    resources :reservations
+  end
+  #resources :reservations
 
   # Sample resource route with options:
   #   resources :products do

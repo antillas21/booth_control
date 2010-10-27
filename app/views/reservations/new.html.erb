@@ -1,0 +1,9 @@
+<h2>Agregar Booth</h2>
+
+<% form_for [@company, @reservation] do |f| %>
+	<p>
+		<%= f.label "Booth" %><br />
+		<%= f.collection_select(:booth_id, Booth.free, :id, :booth_number) %>
+	</p>	
+	<p><%= f.submit "Listo", :class => 'as_button' %></p>
+<% end %>
