@@ -11,7 +11,7 @@
 	<h2>Booths asignados</h2>
 	<ul>
 		<% @company.reservations.each do |reservation| %>
-			<li>
+			<li class="booths">
 				<div class="sample" style="background: #<%= reservation.booth.color_hex_value %>">
 					<span>&nbsp;</span>
 				</div>

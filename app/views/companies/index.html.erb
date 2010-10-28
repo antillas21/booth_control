@@ -12,7 +12,17 @@
 		<% @companies.each do |company| %>
 			<tr>
 				<td class="equalthird"><%= company.user.name %></td>
-				<td class="mainthird"><%= link_to company.name, company %></td>
+				<td class="mainthird">
+					<p><%= link_to company.name, company %></p>
+
+					<% company_booths = []
+						company.booths.each do |booth|
+							company_booths << booth.booth_number
+						end
+					 %>
+					<p>Booths: <%= company_booths.join(', ') %></p>
+
+				</td>
 				<td class="equalthird"><%= company.exhibitor_type.name %></td>
 			</tr>
 		<% end %>

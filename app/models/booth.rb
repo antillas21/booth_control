@@ -7,6 +7,8 @@ class Booth < ActiveRecord::Base
   delegate :hex_value, :to => :color, :prefix => true
   
   has_one :reservation
+  has_one :company, :through => :reservation
+  delegate :name, :profile, :to => :company, :prefix => true
   
   scope :free, where(:available => true)
   

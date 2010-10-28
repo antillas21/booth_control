@@ -32,6 +32,7 @@ ul#controls li { float: left; margin-right: 10px;}
 .moredata { font-size: 0.7em; margin-left: 20px;}
 .notice, .alert { margin-bottom: 15px; }
 .notice .ui-corner-all, .alert .ui-corner-all { padding: 12px 8px; }
+.booths { margin-bottom: 15px;}
 
 .field_with_errors { padding: 2px 5px; margin: 0 0 10px 0;}
 

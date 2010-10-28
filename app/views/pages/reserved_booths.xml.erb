@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map map_file="maps/world.swf" zoom="330%" zoom_x="-131.76%" zoom_y="-65%">
+	<areas>
+	  <% @booths.each do |booth| %>
+	  <area mc_name="<%= booth.code %>" title="<%= booth.booth_number %>" 
+		<% if booth.available == true %>
+			color="#<%= booth.color_hex_value %>"
+		<% else %>
+			color= "#c00"
+		<% end %>
+		>
+	    <description><![CDATA[
+		<% if booth.reservation %>
+			<b><%= booth.company_name %></b><br />
+			<%= booth.company_profile %>
+		<% end %>
+		 ]]></description>
+	  </area>
+	  <% end %>
+	</areas>
+</map>
