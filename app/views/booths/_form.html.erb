@@ -1,4 +1,16 @@
 <% semantic_form_for booth do |f| %>
+	<% if booth.errors.any? %>
+		<div id="error_explanation" class="ui-widget alert">
+			<div class="ui-state-error ui-corner-all">
+				<h2><%= pluralize(booth.errors.count, "error") %>: Por favor corregir</h2>
+				<ul>
+					<% booth.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
 	<p>
 		<%= f.label "Codigo" %><br />
 		<%= f.text_field :code %>

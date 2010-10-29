@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101027162654) do
+ActiveRecord::Schema.define(:version => 20101029010413) do
 
   create_table "booths", :force => true do |t|
     t.string   "booth_number"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20101027162654) do
     t.string   "code"
   end
 
+  add_index "booths", ["booth_number"], :name => "index_booths_on_booth_number"
+  add_index "booths", ["code"], :name => "index_booths_on_code"
   add_index "booths", ["color_id"], :name => "index_booths_on_color_id"
 
   create_table "colors", :force => true do |t|
@@ -29,6 +31,9 @@ ActiveRecord::Schema.define(:version => 20101027162654) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "colors", ["hex_value"], :name => "index_colors_on_hex_value"
+  add_index "colors", ["name"], :name => "index_colors_on_name"
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -48,6 +53,17 @@ ActiveRecord::Schema.define(:version => 20101027162654) do
     t.datetime "updated_at"
   end
 
+  add_index "exhibitor_types", ["name"], :name => "index_exhibitor_types_on_name"
+
+  create_table "maps", :force => true do |t|
+    t.string   "map_file"
+    t.string   "zoom"
+    t.string   "zoom_x"
+    t.string   "zoom_y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "reservations", :force => true do |t|
     t.integer  "company_id"
     t.integer  "booth_id"
@@ -59,9 +75,9 @@ ActiveRecord::Schema.define(:version => 20101027162654) do
   add_index "reservations", ["company_id"], :name => "index_reservations_on_company_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "email",                               :default => "",    :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",    :null => false
+    t.string   "password_salt",                       :default => "",    :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -76,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20101027162654) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "admin",                               :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

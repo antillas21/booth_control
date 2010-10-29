@@ -1,15 +1,27 @@
-<% semantic_form_for company do |f| %>
+<%= semantic_form_for company do |f| %>
+	<% if company.errors.any? %>
+		<div id="error_explanation" class="ui-widget alert">
+			<div class="ui-state-error ui-corner-all">
+				<h2><%= pluralize(company.errors.count, "error") %>: Por favor corregir</h2>
+				<ul>
+					<% company.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
 	<p>
 		<%= f.label "Nombre" %><br />
-		<%= f.text_field :name %>
+		<%= f.text_field :name, :required => true %>
 	</p>
 	<p>
 		<%= f.label "Perfil" %><br />
-		<%= f.input :profile, :as => :text, :label => false %>
+		<%= f.input :profile, :as => :text, :label => false, :required => true %>
 	</p>
 	<p>
 		<%= f.label "Tipo de Expositor" %><br />
-		<%= f.input :exhibitor_type, :as => :select, :label => false, :prompt => "Seleccione..."  %>
+		<%= f.input :exhibitor_type, :as => :select, :label => false, :prompt => "Seleccione...", :required => true  %>
 	</p>
 	<p><%= f.submit "Listo", :class => 'as_button' %></p>
 <% end %>

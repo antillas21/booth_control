@@ -11,8 +11,8 @@
 				<%= exhibitor_type.name %>
 				<div class="hovercontrols">
 					<ul id="controls">
-					<li><%= link_to "<span class=\"ui-icon ui-icon-pencil ui-state-active\">icon</span>".html_safe, edit_exhibitor_type_path(exhibitor_type) %></li>
-					<li><%= link_to "<span class=\"ui-icon ui-icon-trash ui-state-active\">icon</span>".html_safe, exhibitor_type, :confirm => "Esta seguro que desea borrar este tipo de expositor?", :method => :delete %></li>
+					<li><%= link_to "<span class=\"ui-icon ui-icon-pencil\">icon</span>".html_safe, edit_exhibitor_type_path(exhibitor_type) %></li>
+					<li><%= link_to "<span class=\"ui-icon ui-icon-trash\">icon</span>".html_safe, exhibitor_type, :confirm => "Esta seguro que desea borrar este tipo de expositor?", :method => :delete %></li>
 					</ul>
 				</div>
 			</td>
@@ -20,4 +20,4 @@
 		<% end %>
 	</tbody>
 </table>
-<p><%= link_to "Nuevo Tipo de Expositor", new_exhibitor_type_path, :class => 'as_button' %></p>
+<p><%= link_to "<span class=\"ui-icon ui-icon-circle-plus\" style=\"float: left; margin-right: 5px;\">icon</span>Nuevo Tipo de Expositor".html_safe, new_exhibitor_type_path, :class => 'as_button' %></p>

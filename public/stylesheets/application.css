@@ -1,5 +1,5 @@
 /* HTML elements */
-body { background: #665874 url('/images/body2.png'); font-size: 0.85em; line-height: 170%; }
+body { background: #c1dfed url('/images/bg.png') no-repeat top; font-size: 0.85em; line-height: 170%; color: #222222; }
 td { vertical-align: middle; padding: 5px;}
 tr.odd { background: #fff;}
 form input[type=text], form input[type=password] { height: 24px; font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; }
@@ -7,32 +7,41 @@ form textarea { font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; fon
 form, form p { margin-bottom: 15px; }
 form li { margin: 0; list-style: none;}
 form ol, form ul { list-style: none;}
-a { color: #30273a; text-decoration: none;}
-a:hover { color: #665874; text-decoration: underline;}
+a { color: #0084B4; text-decoration: none;}
+a:hover { text-decoration: underline;}
 
 /* IDs */
-#wrapper { margin-top: 30px; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
-#header, #content, #footer { margin-bottom: 15px;}
+#wrapper { margin-top: 30px; margin-bottom: 30px; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; min-height: 600px;}
+#content, #footer, #login-info { margin-bottom: 15px;}
+#content h1 { font-size: 3em; line-height: 168%; margin-bottom: 20px;}
+#content h2 { font-size: 1.5em; line-height: 168%; margin-bottom: 20px;}
+#header { margin-bottom: 20px;}
 ul#controls { list-style: none; }
 ul#controls li { float: left; margin-right: 10px;}
 #company-info { margin-bottom: 20px;}
+#login-info { text-align: right; }
+#signin { background: #0084B4; -moz-border-radius: 8px; height: 160px; color: #fff; margin-left: 170px; margin-top: 100px; }
+#signin:hover { background: #B2EBFF; color: #0084B4;}
+#text { text-align: center; padding: 60px 0;}
 
 /* CLASSES */
 .sample { width: 25px; height: 25px; float: left; margin-right: 15px; border: 1px solid #333; }
-.ui-widget { font-size: 0.75em;}
-.dataTables_wrapper .ui-widget-header { font-weight: normal; font-size: 0.8em;}
+.ui-widget { font-size: 0.85em;}
+.dataTables_wrapper .ui-widget-header { font-weight: normal; font-size: 0.9em;}
 .onecolumn-only { width: 940px;}
 .twothirds { width: 700px;}
 .onethird { width: 240px;}
 .mainthird { width: 340px;}
 .equalthird { width: 300px;}
-.hovercontrols { float: right; width: 300px;}
+.hovercontrols { float: right; vertical-align: top; visibility: hidden;}
+tr:hover div { visibility: visible; }
 .hovercontrols .ui-widget { font-size: 0.55em; margin-top: 5px;}
 .dataTables_wrapper { margin-bottom: 20px;}
 .moredata { font-size: 0.7em; margin-left: 20px;}
 .notice, .alert { margin-bottom: 15px; }
 .notice .ui-corner-all, .alert .ui-corner-all { padding: 12px 8px; }
 .booths { margin-bottom: 15px;}
-
+.stack { float: left; margin-right: 10px;}
+.before { background: black; float: right; width: 442px; height: 30px;}
 .field_with_errors { padding: 2px 5px; margin: 0 0 10px 0;}
 

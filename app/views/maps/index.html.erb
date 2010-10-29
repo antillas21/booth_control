@@ -1,0 +1,17 @@
+<h2>Configuraci&oacute;n de mapa</h2>
+
+
+<% @maps.each do |map| %>
+    Archivo de mapa: <%= map.map_file %><br />
+    Valor de Zoom: <%= map.zoom %><br />
+    Zoom_x: <%= map.zoom_x %><br />
+    Zoom_y: <%= map.zoom_y %><br />
+<% end %>
+
+
+<br />
+<% if Map.count == 0 %>
+	<%= link_to 'Configurar mapa', new_map_path, :class => 'as_button' %>
+<% else %>
+	<%= link_to 'Configurar mapa', edit_map_path(@map), :class => 'as_button' %>
+<% end %>

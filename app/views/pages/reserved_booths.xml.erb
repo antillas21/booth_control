@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<map map_file="maps/world.swf" zoom="330%" zoom_x="-131.76%" zoom_y="-65%">
+<map map_file="<%= @map.map_file %>" zoom="<%= @map.zoom %>" zoom_x="<%= @map.zoom_x %>" zoom_y="<%= @map.zoom_y %>">
 	<areas>
 	  <% @booths.each do |booth| %>
 	  <area mc_name="<%= booth.code %>" title="<%= booth.booth_number %>" 

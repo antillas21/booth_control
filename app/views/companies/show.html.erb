@@ -2,10 +2,10 @@
 	<div id="company-info">
 		<h2><%= @company.name %></h2>
 		<p><%= @company.profile %></p>
-		<p>Tipo de Expositor: <%= @company.exhibitor_type.name %></p>
-		<p>Agente: <%= @company.user.name %></p>
+		<p>Tipo de Expositor: <%= @company.exhibitor_type_name %></p>
+		<p>Agente: <%= @company.user_name %></p>
 	</div>
-	<p><%= link_to "Editar", edit_company_path(@company), :class => 'as_button' %> o <%= link_to "Regresar", companies_path %></p>
+	<p><%= link_to "<span class=\"ui-icon ui-icon-pencil\" style=\"float: left;\">icon</span> Editar".html_safe, edit_company_path(@company), :class => 'as_button' %> o <%= link_to "<span class=\"ui-icon ui-icon-arrow-1-w\" style=\"float: left;\">icon</span> Regresar".html_safe, companies_path, :class => 'as_button' %></p>
 </div>
 <div class="grid_6 omega">
 	<h2>Booths asignados</h2>
@@ -15,11 +15,16 @@
 				<div class="sample" style="background: #<%= reservation.booth.color_hex_value %>">
 					<span>&nbsp;</span>
 				</div>
-				<%= reservation.booth.booth_number %>
-				<%= link_to "borrar", company_reservation_path(@company, reservation), :confirm => "Esta seguro que desea borrar esta Reservacion?", :method => :delete %>
+				<div class="stack">
+					<%= reservation.booth.booth_number %>
+				</div>
+				<div class="stack">
+					<%= link_to "<span class=\"ui-icon ui-icon-trash\" style=\"float: left; margin-right: 5px;\">icon</span>".html_safe, company_reservation_path(@company, reservation), :confirm => "Esta seguro que desea borrar esta Reservacion?", :method => :delete %>
+				</div>
+				<div class="clear"></div>
 			</li>
 		<% end %>
 	</ul>
-	<p><%= link_to "Agregar booth", new_company_reservation_path(@company), :class => 'as_button' %></p>
+	<p><%= link_to "<span class=\"ui-icon ui-icon-circle-plus\" style=\"float: left; margin-right: 5px;\">icon</span>Agregar booth".html_safe, new_company_reservation_path(@company), :class => 'as_button' %></p>
 </div>
 <div class="clear"></div>

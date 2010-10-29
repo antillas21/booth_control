@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  map_file: MyString
+  zoom: MyString
+  zoom_x: MyString
+  zoom_y: MyString
+
+two:
+  map_file: MyString
+  zoom: MyString
+  zoom_x: MyString
+  zoom_y: MyString

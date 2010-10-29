@@ -1,4 +1,2 @@
-<h1>Welcome to Booth Control App</h1>
-<div id="signin">
-	
-</div>
+<h1>Control de Booths</h1>
+<h2><%= link_to "<div id=\"signin\" class=\"grid_10\"><div id=\"text\">Inicia Sesi&oacute;n</div></div>".html_safe, new_user_session_path unless user_signed_in? %></h2>

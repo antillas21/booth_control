@@ -14,8 +14,8 @@
 				<%= color.name %>
 				<div class="hovercontrols">
 					<ul id="controls">
-						<li><%= link_to "<span class=\"ui-icon ui-icon-pencil ui-state-active\">icon</span>".html_safe, edit_color_path(color) %></li>
-						<li><%= link_to "<span class=\"ui-icon ui-icon-trash ui-state-active\">icon</span>".html_safe, color_path(color), :confirm => "Esta seguro que desea borrar este Registro?", :method => :delete %></li>
+						<li><%= link_to "<span class=\"ui-icon ui-icon-pencil\">icon</span>".html_safe, edit_color_path(color) %></li>
+						<li><%= link_to "<span class=\"ui-icon ui-icon-trash\">icon</span>".html_safe, color_path(color), :confirm => "Esta seguro que desea borrar este Registro?", :method => :delete %></li>
 					</ul>
 				</div>
 			</td>
@@ -23,4 +23,4 @@
 		<% end %>
 	</tbody>
 </table>
-<p><%= link_to "Nuevo color", new_color_path, :class => 'as_button' %></p>
+<p><%= link_to "<span class=\"ui-icon ui-icon-circle-plus\" style=\"float: left; margin-right: 5px;\">icon</span>Nuevo color".html_safe, new_color_path, :class => 'as_button' %></p>

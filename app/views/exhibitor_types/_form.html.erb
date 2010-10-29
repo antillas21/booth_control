@@ -1,4 +1,16 @@
 <% form_for exhibitor_type do |f| %>
+	<% if exhibitor_type.errors.any? %>
+		<div id="error_explanation" class="ui-widget alert">
+			<div class="ui-state-error ui-corner-all">
+				<h2><%= pluralize(exhibitor_type.errors.count, "error") %>: Por favor corregir</h2>
+				<ul>
+					<% exhibitor_type.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
 	<p>
 		<%= f.label "Nombre" %><br />
 		<%= f.text_field :name %>

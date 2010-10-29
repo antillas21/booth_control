@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Map file:</b>
+  <%= @map.map_file %>
+</p>
+
+<p>
+  <b>Zoom:</b>
+  <%= @map.zoom %>
+</p>
+
+<p>
+  <b>Zoom x:</b>
+  <%= @map.zoom_x %>
+</p>
+
+<p>
+  <b>Zoom y:</b>
+  <%= @map.zoom_y %>
+</p>
+
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>

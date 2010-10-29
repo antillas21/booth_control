@@ -6,7 +6,9 @@ class Company < ActiveRecord::Base
   validates_length_of :profile, :maximum => 250
   
   belongs_to :user
+  delegate :name, :to => :user, :prefix => true
   belongs_to :exhibitor_type
+  delegate :name, :to => :exhibitor_type, :prefix => true
   
   has_many :reservations
   has_many :booths, :through => :reservations

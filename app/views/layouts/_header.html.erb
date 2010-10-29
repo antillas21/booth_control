@@ -1,17 +1,27 @@
 <div id="navigation">
 	<% if user_signed_in? %>
-		<div>
-			Loggeado como <%= current_user.name %>. &iquest;No eres t&uacute;? <%= link_to "Salir", destroy_user_session_path %>
-			<div id="menu">
-				<ul>
-					<li><%= link_to "Expositores", companies_path %></li>
-					<li><%= link_to "Colores", colors_path %></li>
-					<li><%= link_to "Tipos de Expositor", exhibitor_types_path %></li>
-					<li><%= link_to "Booths", booths_path %></li>
+			<div id="login-info">
+				Loggeado como <%= current_user.name %>. &iquest;No eres t&uacute;? <%= link_to "Salir", destroy_user_session_path %>
+			</div>
+			<div class="clear"></div>
+			<div id="menu" class="menu">
+				<div class="before">&nbsp;</div>
+				<ul id="nav" class="dropdown dropdown-horizontal">
+					<li id="new-company"><%= link_to "Agregar expositor", new_company_path %></li>
+					<li id="companies"><%= link_to "Lista de expositores", companies_path %></li>
+					<li id="config"><span class="dir">Configuraci&oacute;n</span>
+						<% if current_user.admin? %>
+						<ul>
+							<li class="first"><%= link_to "Colores", colors_path %></li>
+							<li><%= link_to "Booths", booths_path %></li>
+							<li><%= link_to "Tipos de expositores", exhibitor_types_path %></li>
+							<li><%= link_to "Configurar mapa", maps_path %></li>
+						</ul>
+						<% end %>
+					</li>
 				</ul>
 			</div>
-		</div>
-	<% else %>
-		<%= link_to "Login", new_user_session_path %>
+			<div class="clear"></div>
 	<% end %>
 </div>
+<div class="clear"></div>

@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>BoothControl</title>
-  <%= stylesheet_link_tag '960', 'text', 'reset', 'jquery-ui-1.8.5.eggplant' %>
+  <%= stylesheet_link_tag '960', 'text', 'reset', 'jquery-ui-twitter' %>
   <%= stylesheet_link_tag 'demo_page', 'demo_table', 'demo_table_jui', 'application', 'uniform.aristo' %>
+  <%= stylesheet_link_tag 'dropdown', 'default.ultimate' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -12,11 +13,12 @@
 			<div id="header">
 				<%= render :partial => 'layouts/header' %>
 			</div>
+			<div class="clear"></div>
 			<div id="content">
 				<% if notice %>
 				<div class="ui-widget notice">
 					<div class="ui-state-highlight ui-corner-all">
-						<span style="float: left; margin-right: 0.3em; margin-top: 0.45em" class="ui-icon ui-icon-info">icon</span>
+						<span style="float: left; margin-right: 0.3em; margin-top: 0.3em" class="ui-icon ui-icon-info">icon</span>
 						<%= notice %>
 					</div>
 				</div>
@@ -31,6 +33,7 @@
 				<% end %>
 				<%= yield %>
 			</div>
+			<div class="clear"></div>
 			<div id="footer">
 				<%= javascript_include_tag 'jquery', 'rails' %>
 				<%= javascript_include_tag 'jquery-ui', 'jquery.dataTables', 'jquery.uniform.min', 'application' %>
