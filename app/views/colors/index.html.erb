@@ -1,3 +1,11 @@
+<div>
+	<div class="grid_12 alpha">
+		<h2>Colores</h2>
+	</div>
+	<div class="grid_4 alpha">
+		<%= link_to "<span class=\"ui-icon ui-icon-circle-plus\" style=\"float: left; margin-right: 5px;\">icon</span>Nuevo color".html_safe, new_color_path, :class => 'as_button' %>
+	</div>
+</div>
 <table class="datatable">
 	<thead>
 		<tr>
@@ -23,4 +31,3 @@
 		<% end %>
 	</tbody>
 </table>
-<p><%= link_to "<span class=\"ui-icon ui-icon-circle-plus\" style=\"float: left; margin-right: 5px;\">icon</span>Nuevo color".html_safe, new_color_path, :class => 'as_button' %></p>

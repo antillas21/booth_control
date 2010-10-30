@@ -10,6 +10,6 @@ class Company < ActiveRecord::Base
   belongs_to :exhibitor_type
   delegate :name, :to => :exhibitor_type, :prefix => true
   
-  has_many :reservations
+  has_many :reservations, :dependent => :destroy
   has_many :booths, :through => :reservations
 end

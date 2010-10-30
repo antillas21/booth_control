@@ -6,7 +6,7 @@ class Booth < ActiveRecord::Base
   belongs_to :color
   delegate :hex_value, :to => :color, :prefix => true
   
-  has_one :reservation
+  has_one :reservation, :dependent => :destroy
   has_one :company, :through => :reservation
   delegate :name, :profile, :to => :company, :prefix => true
   

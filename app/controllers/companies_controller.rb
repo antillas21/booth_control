@@ -39,6 +39,9 @@ class CompaniesController < ApplicationController
   end
   
   def destroy
+    @company.reservations.each do |reservation|
+      reservation.booth.update_attribute(:available, true)
+    end
     @company.destroy
     flash[:notice] = 'Empresa eliminada'
     redirect_to companies_path

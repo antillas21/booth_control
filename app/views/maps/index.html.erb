@@ -11,7 +11,7 @@
 
 <br />
 <% if Map.count == 0 %>
-	<%= link_to 'Configurar mapa', new_map_path, :class => 'as_button' %>
+	<%= link_to "<span class=\"ui-icon ui-icon-gear\" style=\"float: left; margin-right: 5px;\">icon</span>Configurar mapa".html_safe, new_map_path, :class => 'as_button' %>
 <% else %>
-	<%= link_to 'Configurar mapa', edit_map_path(@map), :class => 'as_button' %>
+	<%= link_to "<span class=\"ui-icon ui-icon-gear\" style=\"float: left; margin-right: 5px;\">icon</span>Configurar mapa".html_safe, edit_map_path(@map), :class => 'as_button' %>
 <% end %>

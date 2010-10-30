@@ -1,5 +1,5 @@
 /* HTML elements */
-body { background: #c1dfed url('/images/bg.png') no-repeat top; font-size: 0.85em; line-height: 170%; color: #222222; }
+body { background: #c1dfed url('/images/section1-bg2.png') top repeat-x; font-size: 0.85em; line-height: 170%; color: #222222; }
 td { vertical-align: middle; padding: 5px;}
 tr.odd { background: #fff;}
 form input[type=text], form input[type=password] { height: 24px; font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; }

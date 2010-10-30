@@ -5,7 +5,7 @@
 		<p>Tipo de Expositor: <%= @company.exhibitor_type_name %></p>
 		<p>Agente: <%= @company.user_name %></p>
 	</div>
-	<p><%= link_to "<span class=\"ui-icon ui-icon-pencil\" style=\"float: left;\">icon</span> Editar".html_safe, edit_company_path(@company), :class => 'as_button' %> o <%= link_to "<span class=\"ui-icon ui-icon-arrow-1-w\" style=\"float: left;\">icon</span> Regresar".html_safe, companies_path, :class => 'as_button' %></p>
+	<p><%= link_to "<span class=\"ui-icon ui-icon-pencil\" style=\"float: left;\">icon</span> Editar".html_safe, edit_company_path(@company), :class => 'as_button' %> <%= link_to "<span class=\"ui-icon ui-icon-trash\" style=\"float: left;\">icon</span> Borrar".html_safe, company_path(@company), :method => :delete, :class => 'as_button' %> o <%= link_to "<span class=\"ui-icon ui-icon-arrow-1-w\" style=\"float: left;\">icon</span> Regresar".html_safe, companies_path, :class => 'as_button' %></p>
 </div>
 <div class="grid_6 omega">
 	<h2>Booths asignados</h2>
