@@ -1,0 +1,46 @@
+<% form_for [company, office] do |f| %>
+	<p>
+		<%= f.label "Direcci&oacute;n".html_safe %><br />
+		<%= f.text_field :address1, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "Col. / Secci&oacute;n".html_safe %><br />
+		<%= f.text_field :address2, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "Ciudad" %><br />
+		<%= f.text_field :city, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "Estado" %><br />
+		<%= f.text_field :state_name, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "C.P." %><br />
+		<%= f.text_field :zip, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "Pa&iacute;s".html_safe %><br />
+		<%= f.text_field :country_name, :size => 60 %>
+	</p>
+	<hr />
+	<p>
+		<%= f.label "Tel." %><br />
+		<%= f.text_field :phone, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "Fax" %><br />
+		<%= f.text_field :fax, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "Website" %><br />
+		<%= f.text_field :website, :size => 60 %>
+	</p>
+	<p>
+		<%= f.label "RFC" %><br />
+		<%= f.text_field :rfc, :size => 60 %>
+	</p>
+	<p>
+		<%= f.submit "Guardar", :class => 'as_button' %>
+	</p>
+<% end %>

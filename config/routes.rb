@@ -10,6 +10,7 @@ BoothControl::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   match 'reserved_booths' => 'pages#reserved_booths'
+  
   #match 'companies' => 'companies#index', :as => 'user_root'
 
   # Sample of named route:
@@ -21,8 +22,10 @@ BoothControl::Application.routes.draw do
   resources :colors
   resources :exhibitor_types
   resources :booths
+  resources :states
+  resources :countries
   resources :companies do
-    resources :reservations
+    resources :reservations, :contacts, :offices
   end
   
   #resources :reservations

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101029010413) do
+ActiveRecord::Schema.define(:version => 20101101184300) do
 
   create_table "booths", :force => true do |t|
     t.string   "booth_number"
@@ -47,6 +47,22 @@ ActiveRecord::Schema.define(:version => 20101029010413) do
   add_index "companies", ["exhibitor_type_id"], :name => "index_companies_on_exhibitor_type_id"
   add_index "companies", ["user_id"], :name => "index_companies_on_user_id"
 
+  create_table "contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["company_id"], :name => "index_contacts_on_company_id"
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "exhibitor_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -64,6 +80,27 @@ ActiveRecord::Schema.define(:version => 20101029010413) do
     t.datetime "updated_at"
   end
 
+  create_table "offices", :force => true do |t|
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.integer  "state_id"
+    t.string   "zip"
+    t.integer  "country_id"
+    t.string   "rfc"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "website"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "offices", ["company_id"], :name => "index_offices_on_company_id"
+  add_index "offices", ["country_id"], :name => "index_offices_on_country_id"
+  add_index "offices", ["rfc"], :name => "index_offices_on_rfc"
+  add_index "offices", ["state_id"], :name => "index_offices_on_state_id"
+
   create_table "reservations", :force => true do |t|
     t.integer  "company_id"
     t.integer  "booth_id"
@@ -73,6 +110,12 @@ ActiveRecord::Schema.define(:version => 20101029010413) do
 
   add_index "reservations", ["booth_id"], :name => "index_reservations_on_booth_id"
   add_index "reservations", ["company_id"], :name => "index_reservations_on_company_id"
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",    :null => false

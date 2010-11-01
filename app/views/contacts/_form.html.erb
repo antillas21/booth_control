@@ -1,0 +1,11 @@
+<% form_for [company, contact] do |f| %>
+	<p>
+		<%= f.label "Nombre completo" %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label "Email" %><br />
+		<%= f.text_field :email %>
+	</p>
+	<p><%= f.submit "Listo", :class => 'as_button' %></p>
+<% end %>

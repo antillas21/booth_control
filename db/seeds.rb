@@ -11,3 +11,4 @@ admin = User.create(:name => "Admin", :email => 'antillas21@gmail.com', :passwor
 User.first.update_attribute(:admin, true)
 
 Map.create!(:map_file => "path/to/map.swf", :zoom => "400%", :zoom_x => "300%", :zoom_y => "200%")
+ExhibitorType.create!(:name => "Expositor")

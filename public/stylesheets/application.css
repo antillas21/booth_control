@@ -14,7 +14,7 @@ a:hover { text-decoration: underline;}
 #wrapper { margin-top: 30px; margin-bottom: 30px; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; min-height: 600px;}
 #content, #footer, #login-info { margin-bottom: 15px;}
 #content h1 { font-size: 3em; line-height: 168%; margin-bottom: 20px;}
-#content h2 { font-size: 1.5em; line-height: 168%; margin-bottom: 20px;}
+#content h2 { font-size: 1.5em; line-height: 168%; }
 #header { margin-bottom: 20px;}
 ul#controls { list-style: none; }
 ul#controls li { float: left; margin-right: 10px;}
@@ -43,5 +43,6 @@ tr:hover div { visibility: visible; }
 .booths { margin-bottom: 15px;}
 .stack { float: left; margin-right: 10px;}
 .before { background: black; float: right; width: 442px; height: 30px;}
+.back { margin-top: 50px;}
 .field_with_errors { padding: 2px 5px; margin: 0 0 10px 0;}
 

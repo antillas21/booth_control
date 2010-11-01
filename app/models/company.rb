@@ -12,4 +12,6 @@ class Company < ActiveRecord::Base
   
   has_many :reservations, :dependent => :destroy
   has_many :booths, :through => :reservations
+  has_one :contact, :dependent => :destroy
+  has_one :office, :dependent => :destroy
 end

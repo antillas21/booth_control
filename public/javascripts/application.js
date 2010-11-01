@@ -26,4 +26,51 @@ $(document).ready( function() {
 	$('form select, input:checkbox, input:radio, input:file').uniform();
 	
 	$('.field_with_errors').addClass('ui-state-error');
+	
 });
+
+$(function() {
+		
+		$.ajax({
+			url: "/states.xml",
+			dataType: "xml",
+			success: function( xmlResponse ) {
+				var data = $( "state", xmlResponse ).map(function() {
+					return {
+						value: $( "name", this ).text(),
+						id: $( "id", this ).text()
+					};
+				}).get();
+				$( "#office_state_name" ).autocomplete({
+					source: data,
+					minLength: 0,
+					select: function( event, ui ) {
+						
+					}
+				});
+			}
+		});
+	});
+	
+$(function() {
+
+		$.ajax({
+			url: "/countries.xml",
+			dataType: "xml",
+			success: function( xmlResponse ) {
+				var data = $( "country", xmlResponse ).map(function() {
+					return {
+						value: $( "name", this ).text(),
+						id: $( "id", this ).text()
+					};
+				}).get();
+				$( "#office_country_name" ).autocomplete({
+					source: data,
+					minLength: 0,
+					select: function( event, ui ) {
+
+					}
+				});
+			}
+		});
+	});
