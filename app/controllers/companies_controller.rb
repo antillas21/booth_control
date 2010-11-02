@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
     @company = current_user.companies.build(params[:company])
     if @company.save
       flash[:notice] = "Nueva Empresa agregado"
-      redirect_to @company
+      redirect_to new_company_contact_path(@company)
     else
       render 'new'
     end

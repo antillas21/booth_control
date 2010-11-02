@@ -1,0 +1,23 @@
+<div>
+	<h2>Dashboard &raquo; Booths reservados</h2>
+</div>
+<table class="datatable">
+	<thead>
+		<tr>
+			<th>Booth #</th>
+			<th>Expositor</th>
+			<th>Tipo de Expositor</th>
+			<th>Agente</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @booths.each do |booth| %>
+			<tr>
+				<td class=""><%= booth.booth_number %></td>
+				<td class="mainthird"><%= booth.company_name unless booth.company.nil? %></td>
+				<td class="quarters"><%= booth.company.exhibitor_type_name unless booth.company.nil? %></td>
+				<td class="quarters"><%= booth.company.user_name unless booth.company.nil? %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

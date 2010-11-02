@@ -11,6 +11,7 @@ class Booth < ActiveRecord::Base
   delegate :name, :profile, :to => :company, :prefix => true
   
   scope :free, where(:available => true)
+  scope :reserved, where(:available => false)
   
   def color_name
     color.name if color

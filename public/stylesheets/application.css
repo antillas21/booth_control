@@ -1,5 +1,5 @@
 /* HTML elements */
-body { background: #c1dfed url('/images/section1-bg2.png') top repeat-x; font-size: 0.85em; line-height: 170%; color: #222222; }
+body { background: #c1dfed url('/images/section1-bg.png') top repeat-x; font-size: 0.85em; line-height: 170%; color: #222222; }
 td { vertical-align: middle; padding: 5px;}
 tr.odd { background: #fff;}
 form input[type=text], form input[type=password] { height: 24px; font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; }
@@ -33,6 +33,7 @@ ul#controls li { float: left; margin-right: 10px;}
 .onethird { width: 240px;}
 .mainthird { width: 340px;}
 .equalthird { width: 300px;}
+.quarters { width: 257px;}
 .hovercontrols { float: right; vertical-align: top; visibility: hidden;}
 tr:hover div { visibility: visible; }
 .hovercontrols .ui-widget { font-size: 0.55em; margin-top: 5px;}
@@ -42,7 +43,14 @@ tr:hover div { visibility: visible; }
 .notice .ui-corner-all, .alert .ui-corner-all { padding: 12px 8px; }
 .booths { margin-bottom: 15px;}
 .stack { float: left; margin-right: 10px;}
-.before { background: black; float: right; width: 442px; height: 30px;}
+.before { background: black; float: right; width: 313px; height: 30px;}
 .back { margin-top: 50px;}
 .field_with_errors { padding: 2px 5px; margin: 0 0 10px 0;}
+
+.dataTables_filter {
+float:right;
+padding-right:20px;
+text-align:right;
+width:40%;
+}
 

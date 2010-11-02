@@ -11,7 +11,7 @@ BoothControl::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   match 'reserved_booths' => 'pages#reserved_booths'
   
-  #match 'companies' => 'companies#index', :as => 'user_root'
+  match 'welcome' => 'pages#welcome', :as => 'user_root'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

@@ -6,30 +6,31 @@
 		<%= link_to "<span class=\"ui-icon ui-icon-circle-plus\" style=\"float: left; margin-right: 5px;\">icon</span>Nuevo Expositor".html_safe, new_company_path, :class => 'as_button' %>
 	</div>
 </div>
-<table class="datatable">
+<table id="expositores">
 	<thead>
 		<tr>
 			<th>Agente</th>
 			<th>Expositor</th>
+			<th>Booths</th>
 			<th>Tipo</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @companies.each do |company| %>
 			<tr>
-				<td class="equalthird"><%= company.user_name %></td>
-				<td class="mainthird">
+				<td class="quarters"><%= company.user_name %></td>
+				<td class="quarters">
 					<p><%= link_to company.name, company %></p>
-
+				</td>
+				<td class="quarters">
 					<% company_booths = []
 						company.booths.each do |booth|
 							company_booths << booth.booth_number
 						end
 					 %>
-					<p>Booths: <%= company_booths.join(', ') %></p>
-
+					<p><%= company_booths.join(', ') %></p>
 				</td>
-				<td class="equalthird"><%= company.exhibitor_type_name %></td>
+				<td class="quarters"><%= company.exhibitor_type_name %></td>
 			</tr>
 		<% end %>
 	</tbody>
