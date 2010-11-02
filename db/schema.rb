@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101101184300) do
+ActiveRecord::Schema.define(:version => 20101102165950) do
 
   create_table "booths", :force => true do |t|
     t.string   "booth_number"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20101101184300) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "taxname"
   end
 
   add_index "offices", ["company_id"], :name => "index_offices_on_company_id"

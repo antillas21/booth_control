@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:reserved_booths]
+  before_filter :authenticate_user!, :except => [:reserved_booths, :home]
   
   def home
     @title = 'Booth Control'

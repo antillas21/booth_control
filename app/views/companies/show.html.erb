@@ -37,6 +37,7 @@
 					<% office = @company.office %>
 					<% line1 = [office.address1, office.address2] %>
 					<% line2 = [office.city, office.state_name, office.zip] %>
+					<%= office.taxname %><br />
 					<%= line1.join(', ')%><br />
 					<%= line2.join(', ') %><br />
 					<%= office.country_name unless office.country.nil? %><br />
