@@ -10,7 +10,7 @@ BoothControl::Application.configure do
   config.action_controller.perform_caching = true
   
   # Mailer
-  config.action_mailer.default_url_options = { :host => 'www.gmail.com' }
+  config.action_mailer.default_url_options = { :host => 'mexicalisupply.heroku.com' }
 
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
