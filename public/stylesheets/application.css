@@ -9,6 +9,7 @@ form li { margin: 0; list-style: none;}
 form ol, form ul { list-style: none;}
 a { color: #0084B4; text-decoration: none;}
 a:hover { text-decoration: underline;}
+label.error { font-size: 11px; color: #c51100; margin-left: 20px; background: #ffd9d6; padding: 10px; border: 1px solid #c51100; }
 
 /* IDs */
 #wrapper { margin-top: 30px; margin-bottom: 30px; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; min-height: 600px;}
@@ -23,6 +24,8 @@ ul#controls li { float: left; margin-right: 10px;}
 #signin { background: #0084B4; -moz-border-radius: 8px; height: 160px; color: #fff; margin-left: 170px; margin-top: 100px; }
 #signin:hover { background: #B2EBFF; color: #0084B4;}
 #text { text-align: center; padding: 60px 0;}
+#company_profile_counter { width: 360px; margin-bottom: 20px; margin-left: 140px; }
+#company_profile_counter div { padding: 15px; color: #555; font-size: 16px; }
 
 /* CLASSES */
 .sample { width: 25px; height: 25px; float: left; margin-right: 15px; border: 1px solid #333; }

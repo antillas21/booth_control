@@ -2,19 +2,15 @@
 <map map_file="<%= @map.map_file %>" zoom="<%= @map.zoom %>" zoom_x="<%= @map.zoom_x %>" zoom_y="<%= @map.zoom_y %>">
 	<areas>
 	  <% @booths.each do |booth| %>
-	  <area mc_name="<%= booth.code %>" title="<%= booth.booth_number %>" 
+	  <area mc_name="<%= booth.code %>" title="<%= booth.booth_number %>"		
 		<% if booth.available == true %>
-			color="#<%= booth.color_hex_value %>"
+			color="#<%= booth.color_hex_value %>">
 		<% else %>
-			color= "#c00"
+			color= "#cc0000">
 		<% end %>
-		>
-	    <description><![CDATA[
-		<% if booth.reservation %>
-			<b><%= booth.company_name %></b><br />
-			<%= booth.company_profile %>
+	    <% if booth.reservation %>
+			<description><![CDATA[<%= booth.company_name %><br /><%= booth.company_profile %>]]></description>
 		<% end %>
-		 ]]></description>
 	  </area>
 	  <% end %>
 	</areas>

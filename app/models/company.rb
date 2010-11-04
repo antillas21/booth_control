@@ -3,7 +3,7 @@ class Company < ActiveRecord::Base
   
   validates_presence_of :name, :profile, :exhibitor_type_id
   validates_uniqueness_of :name
-  validates_length_of :profile, :maximum => 250
+  validates_length_of :profile, :maximum => 420
   
   belongs_to :user
   delegate :name, :to => :user, :prefix => true

@@ -10,6 +10,7 @@ gem 'devise', '1.1.3'
 gem 'jquery-rails'
 gem 'formtastic', '~> 1.1.0'
 gem 'rails3-jquery-autocomplete'
+gem 'jquery-validator'
 
 # Use unicorn as the web server
 # gem 'unicorn'
