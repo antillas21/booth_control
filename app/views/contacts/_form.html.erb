@@ -1,4 +1,16 @@
 <% form_for [company, contact] do |f| %>
+	<% if contact.errors.any? %>
+		<div id="error_explanation" class="ui-widget alert">
+			<div class="ui-state-error ui-corner-all">
+				<h2><%= pluralize(contact.errors.count, "error") %>: Por favor corregir</h2>
+				<ul>
+					<% contact.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
 	<p>
 		<%= f.label "Nombre completo" %><br />
 		<%= f.text_field :name %>

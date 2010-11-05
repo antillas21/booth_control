@@ -2,7 +2,8 @@ class Office < ActiveRecord::Base
   attr_accessible :address1, :address2, :city, :state_id, :zip, :country_id, :rfc, :phone, :fax, :website, :company_id, :state_name, :country_name, :taxname
   
   validates_presence_of :address1, :city, :state_id, :country_id, :company_id, :state_name, :country_name, :taxname
-  validates_uniqueness_of :rfc, :taxname
+  validates_uniqueness_of :rfc, :allow_nil => true
+  validates_uniqueness_of :taxname
   
   belongs_to :company
   belongs_to :state

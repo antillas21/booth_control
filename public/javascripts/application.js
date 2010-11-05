@@ -51,20 +51,11 @@ $(document).ready( function() {
 	
 	$('.field_with_errors').addClass('ui-state-error');
 	
-	$('#new_company').validate({
-		debug: true,
-		rules: {
-			"company[name]": {required: true},
-			"company[profile]": {required: true, maxlength: 420},
-			"company[exhibitor_type_id]": {required: true}
-		}
-	});
-	
+
 	$("#company_profile").counter({
 	count: 'down', 
 	goal: 420
 	});
-	
 		
 });
 

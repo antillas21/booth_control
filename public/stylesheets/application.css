@@ -3,7 +3,7 @@ body { background: #c1dfed url('/images/section1-bg.png') top repeat-x; font-siz
 td { vertical-align: middle; padding: 5px;}
 tr.odd { background: #fff;}
 form input[type=text], form input[type=password] { height: 24px; font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; }
-form textarea { font-size: 1em; margin: 5px 0; color: #454545; padding: 5px; font: "Arial"; }
+form textarea { font-size: 1em; margin: 5px 0; color: #454545; padding: 10px; font-family: Arial, sans-serif; line-height: 140%; }
 form, form p { margin-bottom: 15px; }
 form li { margin: 0; list-style: none;}
 form ol, form ul { list-style: none;}
@@ -26,6 +26,7 @@ ul#controls li { float: left; margin-right: 10px;}
 #text { text-align: center; padding: 60px 0;}
 #company_profile_counter { width: 360px; margin-bottom: 20px; margin-left: 140px; }
 #company_profile_counter div { padding: 15px; color: #555; font-size: 16px; }
+
 
 /* CLASSES */
 .sample { width: 25px; height: 25px; float: left; margin-right: 15px; border: 1px solid #333; }
