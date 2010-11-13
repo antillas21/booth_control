@@ -59,6 +59,31 @@ $(document).ready( function() {
 		
 });
 
+
+$(function() {
+		
+		$.ajax({
+			url: "/booths.xml",
+			dataType: "xml",
+			success: function( xmlResponse ) {
+				var data = $( "booth", xmlResponse ).map(function() {
+					return {
+						value: $( "booth-number", this ).text(),
+						id: $( "id", this ).text()
+					};
+				}).get();
+				$( "#reservation_booth_number" ).autocomplete({
+					source: data,
+					minLength: 0,
+					select: function( event, ui ) {
+						
+					}
+				});
+			}
+		});
+	});
+
+
 $(function() {
 		
 		$.ajax({
@@ -104,3 +129,4 @@ $(function() {
 			}
 		});
 	});
+	

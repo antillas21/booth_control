@@ -1,10 +1,17 @@
 class BoothsController < ApplicationController
   
   before_filter :find_booth, :only => [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index]
   
   def index
     @booths = Booth.all
+    @booths_available = Booth.free
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @booths_available }
+      format.js
+      format.json { render :json => @booths_available }
+    end
   end
   
   def show

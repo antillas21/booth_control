@@ -20,4 +20,5 @@ class Booth < ActiveRecord::Base
   def color_name=(name)
     self.color = Color.find_by_name(name) unless name.blank?
   end
+  
 end
