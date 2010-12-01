@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- http://mexicalisupply.heroku.com/crossdomain.xml -->
+<cross-domain-policy>
+  <allow-access-from domain="*.mexicalisupply.com" />
+</cross-domain-policy>
