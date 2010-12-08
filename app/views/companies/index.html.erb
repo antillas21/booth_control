@@ -13,6 +13,7 @@
 			<th>Expositor</th>
 			<th>Booths</th>
 			<th>Tipo</th>
+			<th>Agregado en</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,6 +32,7 @@
 					<p><%= company_booths.join(', ') %></p>
 				</td>
 				<td class="quarters"><%= company.exhibitor_type_name %></td>
+				<td class="quarters"><%= l company.created_at, :format => :custom %></td>
 			</tr>
 		<% end %>
 	</tbody>
