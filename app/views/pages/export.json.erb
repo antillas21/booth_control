@@ -1,0 +1,24 @@
+{
+"sEcho": <%=h @sEcho %>,
+"iTotalRecords": <%= @iTotalRecords %>,
+"iTotalDisplayRecords": <%= @iTotalDisplayRecords %>,
+"aaData" : [ 
+<% @companies.each do |company| %>
+   [   "<%= company.name %>",
+"<%= company.office.taxname unless (company.office.nil? || company.office.taxname.blank?) %>", 
+"<%= company.office.address1 unless (company.office.nil? || company.office.address1.blank?) %>", 
+"<%= company.office.address2 unless (company.office.nil? || company.office.address2.blank?) %>", 
+"<%= company.office.city unless (company.office.nil? || company.office.city.blank?) %>", 
+"<%= company.office.zip unless (company.office.nil? || company.office.zip.blank?) %>", 
+"<%= company.office.state.name unless (company.office.nil? || company.office.state.nil? )%>", 
+"<%= company.office.country.name unless (company.office.nil? || company.office.country.nil? )%>", 
+"<%= company.office.phone unless (company.office.nil? || company.office.phone.blank?)%>", 
+"<%= company.office.fax unless (company.office.nil? || company.office.fax.blank?)%>", 
+"<%= company.office.website unless (company.office.nil? || company.office.website.blank?)%>", 
+"<%= company.contact.name unless (company.contact.nil? || company.contact.name.blank?) %>", 
+"<%= company.contact.email unless (company.contact.nil? || company.contact.email.blank?) %>", 
+"<%= company.booth_export.join(", ") unless company.reservations.empty? %>"
+<%= "]," unless company == @companies.last %>
+<% end %>
+   ]]
+}

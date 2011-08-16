@@ -14,4 +14,21 @@ class Company < ActiveRecord::Base
   has_many :booths, :through => :reservations
   has_one :contact, :dependent => :destroy
   has_one :office, :dependent => :destroy
+  
+  
+  def booth_export
+    company_booths = []
+    self.reservations.each do |r|
+      company_booths << r.booth.booth_number
+    end
+    company_booths
+  end
+  
+  def to_s
+    company_booths = []
+    self.reservations.each do |r|
+      company_booths << r.booth.booth_number
+    end
+    company_booths.join(', ').to_s
+  end
 end

@@ -19,4 +19,32 @@ class PagesController < ApplicationController
     end
   end
   
+  def export
+    @companies = Company.all( :order => "#{companytable_columns(params[:iSortCol_0])} #{params[:sSortDir_0] || "ASC"}",
+                        :limit => params[:iDisplayLength],
+                        :offset => params[:iDisplayStart],
+                        :conditions => [ 'name LIKE ?', "%#{params[:sSearch]}%" ])
+     @iTotalRecords = Company.count
+     @iTotalDisplayRecords = Company.count( :conditions => [ 'name LIKE ?', "%#{params[:sSearch]}%" ] )
+     @sEcho = params[:sEcho].to_i
+     #render :layout => false
+     respond_to do  |format|
+       format.json
+       format.html { render :layout => false }
+     end
+  end
+  
+  def companytable_columns(column_id)
+    case column_id.to_i
+    when 0
+      return "name"
+    when 1
+      return "id"
+    end
+  end
+  
+  def exportable
+    @companies = Company.all
+  end
+  
 end

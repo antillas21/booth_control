@@ -12,6 +12,8 @@ BoothControl::Application.routes.draw do
   match 'reserved_booths' => 'pages#reserved_booths'
   
   match 'welcome' => 'pages#welcome', :as => 'user_root'
+  match 'export' => 'pages#export'
+  match 'exportable' => 'pages#exportable'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

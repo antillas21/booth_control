@@ -1,0 +1,42 @@
+<table id="exportable-local">
+	<thead>
+		<tr>
+			<th>Empresa</th>
+			<th>Nombre fiscal</th>
+			<th>Direccion</th>
+			<th>Colonia</th>
+			<th>Ciudad</th>
+			<th>C.P.</th>
+			<th>Estado</th>
+			<th>Pais</th>
+			<th>Tel.</th>
+			<th>Fax</th>
+			<th>Website</th>
+			<th>Contacto</th>
+			<th>Email</th>
+			<th>Booths</th>
+			<th>Perfil Empresa</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @companies.each do |company| %>
+		<tr>
+			<td><%= company.name %></td>
+			<td><%= company.office.taxname unless (company.office.nil? || company.office.taxname.blank?) %></td>
+			<td><%= company.office.address1 unless (company.office.nil? || company.office.address1.blank?) %></td>
+			<td><%= company.office.address2 unless (company.office.nil? || company.office.address2.blank?) %></td>
+			<td><%= company.office.city unless (company.office.nil? || company.office.city.blank?) %></td>
+			<td><%= company.office.zip unless (company.office.nil? || company.office.zip.blank?) %></td>
+			<td><%= company.office.state.name unless (company.office.nil? || company.office.state.nil? )%></td>
+			<td><%= company.office.country.name unless (company.office.nil? || company.office.country.nil? )%></td>
+			<td><%= company.office.phone unless (company.office.nil? || company.office.phone.blank?) %></td>
+			<td><%= company.office.fax unless (company.office.nil? || company.office.fax.blank?) %></td>
+			<td><%= company.office.website unless (company.office.nil? || company.office.website.blank?) %></td>
+			<td><%= company.contact.name unless (company.contact.nil? || company.contact.name.blank?) %></td>
+			<td><%= company.contact.email unless (company.contact.nil? || company.contact.email.blank?) %></td>
+			<td><%= company.booth_export.join(", ") unless company.reservations.empty? %></td>
+			<td><%= h(company.profile) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
