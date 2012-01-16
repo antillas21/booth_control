@@ -12,6 +12,8 @@ gem 'formtastic', '~> 1.1.0'
 gem 'rails3-jquery-autocomplete'
 gem 'jquery-validator'
 
+gem 'yaml_db'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

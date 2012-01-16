@@ -78,6 +78,7 @@ GEM
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
+    yaml_db (0.2.1)
 
 PLATFORMS
   ruby
@@ -90,3 +91,4 @@ DEPENDENCIES
   rails (= 3.0.1)
   rails3-jquery-autocomplete
   sqlite3-ruby
+  yaml_db
