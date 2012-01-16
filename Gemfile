@@ -14,6 +14,10 @@ gem 'jquery-validator'
 
 gem 'yaml_db'
 
+# heroku deployment
+gem 'heroku'
+gem 'taps'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
